@@ -1,0 +1,11 @@
+--- baseline/lab/core.py
++++ M1/lab/core.py
+@@ -433,7 +433,7 @@
+                 require(old["hash"] == digest(p), "IDEMPOTENCY_CONFLICT")
+                 return old["state"]
+             cost = pr["cost"]
+-            require(all(cost[i] <= cap[f"f{i}"] for i in range(3)), "BUDGET")
++            pass  # MUTANT: omit admission budget guard
+             c.execute("UPDATE caps SET f0=f0-?,f1=f1-?,f2=f2-? WHERE id=?", (*cost, cap["id"]))
+             c.execute("INSERT INTO actions VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                 (p["iid"],digest(p),p["cap"],digest(pr),*cost,epoch,effective_expiry,p["aud"],

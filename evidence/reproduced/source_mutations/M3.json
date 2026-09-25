@@ -1,0 +1,60 @@
+{
+  "id": "M3",
+  "test": "test_80_approval_expiry_limits_inflight_permit",
+  "target_line": 430,
+  "original_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+  "mutant_sha256": "477c207d947d5dfda703ba5645e8afc237bd067720a225bf3ef9d6fe6af900ea",
+  "single_line_replacement": true,
+  "baseline": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_80_approval_expiry_limits_inflight_permit",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "resource_result": "NOT_APPLIED",
+      "now": 1002,
+      "approval_expiry": 1001
+    },
+    "target_line_executed": true,
+    "log": "test_80_approval_expiry_limits_inflight_permit (test_contract.ContractTests.test_80_approval_expiry_limits_inflight_permit) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.398s\n\nOK\n"
+  },
+  "mutant": {
+    "core_sha256": "477c207d947d5dfda703ba5645e8afc237bd067720a225bf3ef9d6fe6af900ea",
+    "optimization": 0,
+    "test": "test_80_approval_expiry_limits_inflight_permit",
+    "tests_run": 1,
+    "successful": false,
+    "failures": 1,
+    "errors": 0,
+    "direct": {
+      "unsafe": true,
+      "resource_result": "APPLIED",
+      "now": 1002,
+      "approval_expiry": 1001
+    },
+    "target_line_executed": true,
+    "log": "test_80_approval_expiry_limits_inflight_permit (test_contract.ContractTests.test_80_approval_expiry_limits_inflight_permit) ... FAIL\n\n======================================================================\nFAIL: test_80_approval_expiry_limits_inflight_permit (test_contract.ContractTests.test_80_approval_expiry_limits_inflight_permit)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"H:\\SSL_publication_autorisee_20260925\\private_state\\tmp_execution\\authority-mutation-8tpq0paq\\tests\\test_contract.py\", line 290, in test_80_approval_expiry_limits_inflight_permit\n    self.assertEqual(rec['payload']['result'],'NOT_APPLIED')\nAssertionError: 'APPLIED' != 'NOT_APPLIED'\n- APPLIED\n+ NOT_APPLIED\n? ++++\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.524s\n\nFAILED (failures=1)\n"
+  },
+  "restored": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_80_approval_expiry_limits_inflight_permit",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "resource_result": "NOT_APPLIED",
+      "now": 1002,
+      "approval_expiry": 1001
+    },
+    "target_line_executed": true,
+    "log": "test_80_approval_expiry_limits_inflight_permit (test_contract.ContractTests.test_80_approval_expiry_limits_inflight_permit) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.641s\n\nOK\n"
+  },
+  "passed": true
+}

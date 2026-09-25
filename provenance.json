@@ -1,0 +1,11 @@
+{
+  "source_archive": "agent_trust_darpa_dossier.zip",
+  "sha256": "38073bd5d0661b8bd624ef19f12b09ea0c5ed4b3c75a9b961551599c55499b03",
+  "date_of_local_review": "2026-09-25",
+  "core_before_and_after_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+  "core_semantic_changes_this_pass": false,
+  "assistance": "ChatGPT preparation followed by Codex reconciliation, evidence corrections, reproduction and three actual review subagents. Publication readback is recorded separately without moving the release tag.",
+  "source_authentication": "Integrity relative to supplied bytes, not independent provenance certification.",
+  "codex_return_input_sha256": "0b358403b0fd42fa3764dfcde18263d3514e9cfc0d83cbc00d7f6a03b5fff5ce",
+  "prior_local_candidate_sha256": "ae810f45b0fc5982bd4bfc69330fe7abb67202d7e6855e68aebe0ae7f02d5d5c"
+}

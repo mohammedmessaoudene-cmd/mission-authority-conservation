@@ -1,0 +1,172 @@
+{
+  "none": {
+    "variant": "none",
+    "safe_in_finite_model": true,
+    "states_discovered": 1638,
+    "edges_examined": 5265,
+    "violations": [],
+    "scope": "3 actions, cost 2 each, budget 4, finite modes"
+  },
+  "no_budget_check": {
+    "variant": "no_budget_check",
+    "safe_in_finite_model": false,
+    "states_discovered": 82,
+    "edges_examined": 120,
+    "violations": [
+      "negative_free_budget"
+    ],
+    "counterexample": [
+      "reserve(0)",
+      "reserve(1)",
+      "reserve(2)"
+    ],
+    "final_state": {
+      "free": -2,
+      "committed": 0,
+      "mode": [
+        "R",
+        "R",
+        "R"
+      ],
+      "ticket": [
+        false,
+        false,
+        false
+      ],
+      "receipt": [
+        0,
+        0,
+        0
+      ],
+      "effects": [
+        0,
+        0,
+        0
+      ],
+      "revoked": false,
+      "revoked_dispatch": false
+    }
+  },
+  "refund_unknown": {
+    "variant": "refund_unknown",
+    "safe_in_finite_model": false,
+    "states_discovered": 136,
+    "edges_examined": 215,
+    "violations": [
+      "unbacked_live_or_applied_permission"
+    ],
+    "counterexample": [
+      "reserve(0)",
+      "dispatch(0)",
+      "lose_ack(0)",
+      "UNSAFE_refund_unknown(0)"
+    ],
+    "final_state": {
+      "free": 4,
+      "committed": 0,
+      "mode": [
+        "A",
+        "N",
+        "N"
+      ],
+      "ticket": [
+        true,
+        false,
+        false
+      ],
+      "receipt": [
+        0,
+        0,
+        0
+      ],
+      "effects": [
+        0,
+        0,
+        0
+      ],
+      "revoked": false,
+      "revoked_dispatch": false
+    }
+  },
+  "ignore_revocation": {
+    "variant": "ignore_revocation",
+    "safe_in_finite_model": false,
+    "states_discovered": 50,
+    "edges_examined": 67,
+    "violations": [
+      "new_dispatch_after_revocation"
+    ],
+    "counterexample": [
+      "reserve(0)",
+      "revoke",
+      "dispatch(0)"
+    ],
+    "final_state": {
+      "free": 2,
+      "committed": 0,
+      "mode": [
+        "D",
+        "N",
+        "N"
+      ],
+      "ticket": [
+        true,
+        false,
+        false
+      ],
+      "receipt": [
+        0,
+        0,
+        0
+      ],
+      "effects": [
+        0,
+        0,
+        0
+      ],
+      "revoked": true,
+      "revoked_dispatch": true
+    }
+  },
+  "no_resource_idempotence": {
+    "variant": "no_resource_idempotence",
+    "safe_in_finite_model": false,
+    "states_discovered": 147,
+    "edges_examined": 234,
+    "violations": [
+      "duplicated_resource_effect"
+    ],
+    "counterexample": [
+      "reserve(0)",
+      "dispatch(0)",
+      "resource_apply(0)",
+      "UNSAFE_replay_effect(0)"
+    ],
+    "final_state": {
+      "free": 2,
+      "committed": 0,
+      "mode": [
+        "D",
+        "N",
+        "N"
+      ],
+      "ticket": [
+        true,
+        false,
+        false
+      ],
+      "receipt": [
+        1,
+        0,
+        0
+      ],
+      "effects": [
+        2,
+        0,
+        0
+      ],
+      "revoked": false,
+      "revoked_dispatch": false
+    }
+  }
+}

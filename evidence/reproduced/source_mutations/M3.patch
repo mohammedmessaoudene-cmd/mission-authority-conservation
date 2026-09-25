@@ -1,0 +1,11 @@
+--- baseline/lab/core.py
++++ M3/lab/core.py
+@@ -427,7 +427,7 @@
+                         and ap["decision"] == "approve", "APPROVAL_BINDING")
+                 natural(ap["expires"], True)
+                 require(self.clock.now() < ap["expires"] <= p["deadline"], "APPROVAL_EXPIRED")
+-                effective_expiry = min(effective_expiry, ap["expires"])
++                pass  # MUTANT: omit approval expiry bound
+             old = c.execute("SELECT hash,state FROM actions WHERE iid=?", (p["iid"],)).fetchone()
+             if old:
+                 require(old["hash"] == digest(p), "IDEMPOTENCY_CONFLICT")

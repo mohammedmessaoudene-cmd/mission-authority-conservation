@@ -1,0 +1,154 @@
+test_01_honest_payment (test_contract.ContractTests.test_01_honest_payment) ... ok
+test_02_signature_tamper (test_contract.ContractTests.test_02_signature_tamper) ... ok
+test_03_wrong_actor_key (test_contract.ContractTests.test_03_wrong_actor_key) ... ok
+test_04_unknown_key (test_contract.ContractTests.test_04_unknown_key) ... ok
+test_05_wrong_signature_domain (test_contract.ContractTests.test_05_wrong_signature_domain) ... ok
+test_06_wrong_resource_signer (test_contract.ContractTests.test_06_wrong_resource_signer) ... ok
+test_07_action_rebound_after_preview (test_contract.ContractTests.test_07_action_rebound_after_preview) ... ok
+test_08_cross_audience (test_contract.ContractTests.test_08_cross_audience) ... ok
+test_09_destination_outside_scope (test_contract.ContractTests.test_09_destination_outside_scope) ... ok
+test_10_unknown_top_level (test_contract.ContractTests.test_10_unknown_top_level) ... ok
+test_11_floats_forbidden (test_contract.ContractTests.test_11_floats_forbidden) ... ok
+test_12_boolean_amount_forbidden (test_contract.ContractTests.test_12_boolean_amount_forbidden) ... ok
+test_13_negative_amount_forbidden (test_contract.ContractTests.test_13_negative_amount_forbidden) ... ok
+test_14_zero_payment_forbidden (test_contract.ContractTests.test_14_zero_payment_forbidden) ... ok
+test_15_duplicate_json_key (test_contract.ContractTests.test_15_duplicate_json_key) ... ok
+test_16_nonascii_profile_reject (test_contract.ContractTests.test_16_nonascii_profile_reject) ... ok
+test_17_integer_overflow_reject (test_contract.ContractTests.test_17_integer_overflow_reject) ... ok
+test_18_expiry_boundary (test_contract.ContractTests.test_18_expiry_boundary) ... ok
+test_19_policy_version (test_contract.ContractTests.test_19_policy_version) ... ok
+test_20_resource_version (test_contract.ContractTests.test_20_resource_version) ... ok
+test_21_missing_human (test_contract.ContractTests.test_21_missing_human) ... ok
+test_22_software_human_role_accepted (test_contract.ContractTests.test_22_software_human_role_accepted) ... ok
+test_23_agent_signature_not_human_role (test_contract.ContractTests.test_23_agent_signature_not_human_role) ... ok
+test_24_principal_is_not_automatically_human_role (test_contract.ContractTests.test_24_principal_is_not_automatically_human_role) ... ok
+test_25_approval_cannot_follow_changed_amount (test_contract.ContractTests.test_25_approval_cannot_follow_changed_amount) ... ok
+test_26_approval_expiry (test_contract.ContractTests.test_26_approval_expiry) ... ok
+test_27_duplicate_reserve_not_duplicate_debit (test_contract.ContractTests.test_27_duplicate_reserve_not_duplicate_debit) ... ok
+test_28_same_id_different_body (test_contract.ContractTests.test_28_same_id_different_body) ... ok
+test_29_double_dispatch (test_contract.ContractTests.test_29_double_dispatch) ... ok
+test_30_resource_duplicate_idempotence (test_contract.ContractTests.test_30_resource_duplicate_idempotence) ... ok
+test_31_duplicate_receipt_no_reaccounting (test_contract.ContractTests.test_31_duplicate_receipt_no_reaccounting) ... ok
+test_32_forged_resource_receipt (test_contract.ContractTests.test_32_forged_resource_receipt) ... ok
+test_33_receipt_bound_cost (test_contract.ContractTests.test_33_receipt_bound_cost) ... ok
+test_34_no_budget_overrun (test_contract.ContractTests.test_34_no_budget_overrun) ... ok
+test_35_export_cost_measured_by_resource (test_contract.ContractTests.test_35_export_cost_measured_by_resource) ... ok
+test_36_agent_cannot_declare_zero_export_cost (test_contract.ContractTests.test_36_agent_cannot_declare_zero_export_cost) ... ok
+test_37_export_byte_budget (test_contract.ContractTests.test_37_export_byte_budget) ... ok
+test_38_irreversible_count_budget (test_contract.ContractTests.test_38_irreversible_count_budget) ... ok
+test_39_delegation_conserves_budget (test_contract.ContractTests.test_39_delegation_conserves_budget) ... ok
+test_40_delegation_budget_clone_denied (test_contract.ContractTests.test_40_delegation_budget_clone_denied) ... ok
+test_41_delegated_subject_cannot_be_forged (test_contract.ContractTests.test_41_delegated_subject_cannot_be_forged) ... ok
+test_42_honest_delegate (test_contract.ContractTests.test_42_honest_delegate) ... ok
+test_43_delegation_permission_widening (test_contract.ContractTests.test_43_delegation_permission_widening) ... ok
+test_44_delegation_expiry_widening (test_contract.ContractTests.test_44_delegation_expiry_widening) ... ok
+test_45_delegation_wrong_signer (test_contract.ContractTests.test_45_delegation_wrong_signer) ... ok
+test_46_wrong_mission_binding (test_contract.ContractTests.test_46_wrong_mission_binding) ... ok
+test_47_revoke_before_reserve (test_contract.ContractTests.test_47_revoke_before_reserve) ... ok
+test_48_revoke_reserved_before_dispatch (test_contract.ContractTests.test_48_revoke_reserved_before_dispatch) ... ok
+test_49_parent_revocation_cascades (test_contract.ContractTests.test_49_parent_revocation_cascades) ... ok
+test_50_dispatched_before_revocation_is_inflight_not_retracted (test_contract.ContractTests.test_50_dispatched_before_revocation_is_inflight_not_retracted) ... ok
+test_51_forged_revocation (test_contract.ContractTests.test_51_forged_revocation) ... ok
+test_52_revocation_rollback (test_contract.ContractTests.test_52_revocation_rollback) ... ok
+test_53_old_epoch_unrelated_mission (test_contract.ContractTests.test_53_old_epoch_unrelated_mission) ... ok
+test_54_cancel_reserved_refunds (test_contract.ContractTests.test_54_cancel_reserved_refunds) ... ok
+test_55_cancel_dispatched_forbidden (test_contract.ContractTests.test_55_cancel_dispatched_forbidden) ... ok
+test_56_unknown_holds_budget (test_contract.ContractTests.test_56_unknown_holds_budget) ... ok
+test_57_timeout_never_means_not_applied (test_contract.ContractTests.test_57_timeout_never_means_not_applied) ... ok
+test_58_query_absence_not_evidence_for_refund (test_contract.ContractTests.test_58_query_absence_not_evidence_for_refund) ... ok
+test_59_restart_gate_preserves_uncertain (test_contract.ContractTests.test_59_restart_gate_preserves_uncertain) ... ok
+test_60_restart_resource_preserves_idempotence (test_contract.ContractTests.test_60_restart_resource_preserves_idempotence) ... ok
+test_61_changed_resource_after_dispatch_aborts (test_contract.ContractTests.test_61_changed_resource_after_dispatch_aborts) ... ok
+test_62_not_applied_is_terminal_at_resource (test_contract.ContractTests.test_62_not_applied_is_terminal_at_resource) ... ok
+test_63_expiry_before_dispatch (test_contract.ContractTests.test_63_expiry_before_dispatch) ... ok
+test_64_clock_rollback_rejected (test_contract.ContractTests.test_64_clock_rollback_rejected) ... ok
+test_65_event_tampering_detected (test_contract.ContractTests.test_65_event_tampering_detected) ... ok
+test_66_balance_tampering_detected (test_contract.ContractTests.test_66_balance_tampering_detected) ... ok
+test_67_concurrent_reservation_cannot_overspend (test_contract.ContractTests.test_67_concurrent_reservation_cannot_overspend) ... ok
+test_68_concurrent_duplicate_commits_once (test_contract.ContractTests.test_68_concurrent_duplicate_commits_once) ... ok
+test_69_delegation_duplicate_id (test_contract.ContractTests.test_69_delegation_duplicate_id) ... ok
+test_70_policy_does_not_prove_message_truth (test_contract.ContractTests.test_70_policy_does_not_prove_message_truth) ... ok
+test_71_direct_resource_without_gate_permit (test_contract.ContractTests.test_71_direct_resource_without_gate_permit) ... ok
+test_72_noninteger_json_rejected (test_contract.ContractTests.test_72_noninteger_json_rejected) ... ok
+test_73_canonical_key_order_stable (test_contract.ContractTests.test_73_canonical_key_order_stable) ... ok
+test_74_cancelled_id_cannot_be_reused (test_contract.ContractTests.test_74_cancelled_id_cannot_be_reused) ... ok
+test_75_root_certificate_wrong_issuer (test_contract.ContractTests.test_75_root_certificate_wrong_issuer) ... ok
+test_76_receipt_unknown_action (test_contract.ContractTests.test_76_receipt_unknown_action) ... ok
+test_77_approval_expiry_rechecked_before_dispatch (test_contract.ContractTests.test_77_approval_expiry_rechecked_before_dispatch) ... FAIL
+test_78_policy_change_before_dispatch (test_contract.ContractTests.test_78_policy_change_before_dispatch) ... FAIL
+test_79_cap_expiry_limits_inflight_permit (test_contract.ContractTests.test_79_cap_expiry_limits_inflight_permit) ... FAIL
+test_80_approval_expiry_limits_inflight_permit (test_contract.ContractTests.test_80_approval_expiry_limits_inflight_permit) ... FAIL
+test_81_malformed_key_identifier_fails_closed (test_contract.ContractTests.test_81_malformed_key_identifier_fails_closed) ... ERROR
+
+======================================================================
+ERROR: test_81_malformed_key_identifier_fails_closed (test_contract.ContractTests.test_81_malformed_key_identifier_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 294, in test_81_malformed_key_identifier_fails_closed
+    self.denied('ACTOR',self.g.reserve,sig,pr)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 19, in denied
+    fn(*a,**kw)
+    ~~^^^^^^^^^
+  File "/mnt/data/agent_trust_lab/lab/core.py", line 403, in reserve
+    p, pr = self._authenticate(signed, preview)
+            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/agent_trust_lab/lab/core.py", line 387, in _authenticate
+    require(signed["kid"] in self.actors, "ACTOR")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'list'
+
+======================================================================
+FAIL: test_77_approval_expiry_rechecked_before_dispatch (test_contract.ContractTests.test_77_approval_expiry_rechecked_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 273, in test_77_approval_expiry_rechecked_before_dispatch
+    self.denied('EXPIRED',self.g.begin,p['iid'])
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 18, in denied
+    with self.assertRaises(Denied) as ctx:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: Denied not raised
+
+======================================================================
+FAIL: test_78_policy_change_before_dispatch (test_contract.ContractTests.test_78_policy_change_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 277, in test_78_policy_change_before_dispatch
+    self.denied('POLICY_VERSION',self.g.begin,p['iid'])
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 18, in denied
+    with self.assertRaises(Denied) as ctx:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: Denied not raised
+
+======================================================================
+FAIL: test_79_cap_expiry_limits_inflight_permit (test_contract.ContractTests.test_79_cap_expiry_limits_inflight_permit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 282, in test_79_cap_expiry_limits_inflight_permit
+    self.assertEqual(rec['payload']['result'],'NOT_APPLIED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'APPLIED' != 'NOT_APPLIED'
+- APPLIED
++ NOT_APPLIED
+? ++++
+
+
+======================================================================
+FAIL: test_80_approval_expiry_limits_inflight_permit (test_contract.ContractTests.test_80_approval_expiry_limits_inflight_permit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/agent_trust_lab/tests/test_contract.py", line 290, in test_80_approval_expiry_limits_inflight_permit
+    self.assertEqual(rec['payload']['result'],'NOT_APPLIED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'APPLIED' != 'NOT_APPLIED'
+- APPLIED
++ NOT_APPLIED
+? ++++
+
+
+----------------------------------------------------------------------
+Ran 81 tests in 0.682s
+
+FAILED (failures=4, errors=1)

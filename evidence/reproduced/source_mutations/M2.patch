@@ -1,0 +1,11 @@
+--- baseline/lab/core.py
++++ M2/lab/core.py
+@@ -470,7 +470,7 @@
+     def cancel(self, iid: str) -> None:
+         with self.tx() as c:
+             r = c.execute("SELECT * FROM actions WHERE iid=?", (iid,)).fetchone()
+-            require(r is not None and r["state"] == "RESERVED", "UNSAFE_REFUND")
++            require(r is not None and r["state"] in ("RESERVED", "DISPATCHED", "UNKNOWN"), "UNSAFE_REFUND")
+             c.execute("UPDATE caps SET f0=f0+?,f1=f1+?,f2=f2+? WHERE id=?",
+                       (*(r[f"c{i}"] for i in range(3)),r["cap"]))
+             c.execute("UPDATE actions SET state='ABORTED' WHERE iid=?", (iid,))

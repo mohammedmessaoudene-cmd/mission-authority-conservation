@@ -1,0 +1,147 @@
+{
+  "profile": "ATLAB/0.1 research-only",
+  "seed_private_keys_exported": false,
+  "human_presence_demonstrated": false,
+  "software_role_approval_only": true,
+  "public_keys_hex": {
+    "invocation": "5e9081bcf746d3b2a265ead9629b475af9a47df792ca3563a65277fea4a6027b",
+    "preview": "74f6a83fc6fff388736fbf8ece69dc52d99c1bb4ce8fa6da6f250934c67d0c96",
+    "approval": "2283dc51306b0e993a512fb7826db6321b621c0054b2c0ad5808d688a15cae21",
+    "permit": "8a69ad6c443deede59377afce1b810513de9d0889cde83532f9258bd8903b28f",
+    "receipt": "74f6a83fc6fff388736fbf8ece69dc52d99c1bb4ce8fa6da6f250934c67d0c96"
+  },
+  "objects": {
+    "invocation": {
+      "kind": "INVOKE",
+      "kid": "afe7123f4b442cbfc4cab71b5c15815bdcf400bc904d9405032cd5b0256d0777",
+      "payload": {
+        "actor": "afe7123f4b442cbfc4cab71b5c15815bdcf400bc904d9405032cd5b0256d0777",
+        "aud": "tool-demo",
+        "cap": "root",
+        "deadline": 1100,
+        "iid": "demo-exact-action",
+        "mission": "root",
+        "op": "pay",
+        "params": {
+          "amount_minor": 50
+        },
+        "policy": "policy-v1",
+        "target": "vendor-a"
+      },
+      "signature": "e8b8c3f5f73b7cbf1bc87f561438b970adf90032b0d31d3f4483ce0eac44ddab76eca2b26ecf442600324b75058331f26ea80bc4ec80de99e8640ed80e85c60f"
+    },
+    "preview": {
+      "kind": "PREPARED",
+      "kid": "55813437d3cdbb34374b5116195bf27a3712c78f2e2ab3157ed61890fa5fd301",
+      "payload": {
+        "action_hash": "c44c934bfc16662223db41d04387e25cccb8c44319b8131d0c3b70f8d1599b20",
+        "aud": "tool-demo",
+        "cost": [
+          50,
+          0,
+          1
+        ],
+        "expires": 1100,
+        "resource_version": "resource-v1"
+      },
+      "signature": "81059d15a66ba640e95c451564dbd1614d158a9990c406a2e9e09ddcb1fe250318537e12ab3ae47ae80a9cae5f4a2975ea9f81b6b9b5e84699c145d22af6a90a"
+    },
+    "approval": {
+      "kind": "APPROVE",
+      "kid": "a500546a3971eecc3c38cd0085d40a7967488b9573c7a5ace397a63fc31dda1c",
+      "payload": {
+        "action_hash": "c44c934bfc16662223db41d04387e25cccb8c44319b8131d0c3b70f8d1599b20",
+        "cap": "root",
+        "decision": "approve",
+        "epoch": 1,
+        "expires": 1100,
+        "preview_hash": "f8318192d1863daa3e75cdcd0a0f869ee352229d53e6197d4e2e9954b26e90b1"
+      },
+      "signature": "a8196cc61ae78130f82e34c8cf3b4447ff77e46af43191c6756f338747fc14155a6c174b710c92ed9ccce0842b76fbda73eb0069def6003a16b456925e4eb704"
+    },
+    "permit": {
+      "kind": "DISPATCH",
+      "kid": "8a2b299672ef14e6492ca22bc7bf518e79cbd94d3d455e7379d1b2386e23f2db",
+      "payload": {
+        "action_hash": "c44c934bfc16662223db41d04387e25cccb8c44319b8131d0c3b70f8d1599b20",
+        "aud": "tool-demo",
+        "cap": "root",
+        "cost": [
+          50,
+          0,
+          1
+        ],
+        "epoch": 1,
+        "expires": 1100,
+        "iid": "demo-exact-action",
+        "preview_hash": "f8318192d1863daa3e75cdcd0a0f869ee352229d53e6197d4e2e9954b26e90b1",
+        "resource_version": "resource-v1"
+      },
+      "signature": "e1649f5990c32e3673997814fa8c33bbf3f5c9d7793bc2ab32a3443881df43f3acdc178a8c428c4884be6f2e8acd62ccc7ebb74f06028f70d7ec109f148a4d07"
+    },
+    "receipt": {
+      "kind": "RECEIPT",
+      "kid": "55813437d3cdbb34374b5116195bf27a3712c78f2e2ab3157ed61890fa5fd301",
+      "payload": {
+        "action_hash": "c44c934bfc16662223db41d04387e25cccb8c44319b8131d0c3b70f8d1599b20",
+        "aud": "tool-demo",
+        "cost": [
+          50,
+          0,
+          1
+        ],
+        "epoch": 1,
+        "iid": "demo-exact-action",
+        "preview_hash": "f8318192d1863daa3e75cdcd0a0f869ee352229d53e6197d4e2e9954b26e90b1",
+        "result": "APPLIED"
+      },
+      "signature": "a486bb27a557223c8cc6b4572ea7d4b613a46942a60093f836df26e8ad6e34e78a4d3701f1f7297c383a01579859d56b8093f86c2521003ed9ab16d209c10601"
+    }
+  },
+  "state_before_reconciliation": "UNKNOWN",
+  "balance_while_unknown": {
+    "budget": [
+      100,
+      500,
+      10
+    ],
+    "free": [
+      50,
+      500,
+      9
+    ],
+    "committed": [
+      0,
+      0,
+      0
+    ]
+  },
+  "state_after": "COMMITTED",
+  "balance_after": {
+    "budget": [
+      100,
+      500,
+      10
+    ],
+    "free": [
+      50,
+      500,
+      9
+    ],
+    "committed": [
+      50,
+      0,
+      1
+    ]
+  },
+  "resource_effect_totals": [
+    50,
+    0,
+    1
+  ],
+  "audit": {
+    "caps": 1,
+    "actions": 1,
+    "events": 5
+  }
+}

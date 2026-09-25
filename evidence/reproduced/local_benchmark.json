@@ -1,0 +1,24 @@
+{
+  "samples": 300,
+  "warmup": 20,
+  "single_thread": true,
+  "signature_verification": {
+    "median_ms": 0.1799,
+    "p95_ms": 0.2439,
+    "p99_ms": 0.2985,
+    "max_ms": 0.307
+  },
+  "reserve_including_checks_and_sqlite": {
+    "median_ms": 14.0235,
+    "p95_ms": 29.777,
+    "p99_ms": 60.212,
+    "max_ms": 338.2309
+  },
+  "reserve_dispatch_effect_settle_toy": {
+    "median_ms": 54.0588,
+    "p95_ms": 148.3636,
+    "p99_ms": 295.832,
+    "max_ms": 362.1301
+  },
+  "scope": "one local host, software keys, local SQLite; preparation excluded; no network or durability power-loss validation"
+}

@@ -1,0 +1,11 @@
+--- baseline/lab/core.py
++++ M4/lab/core.py
+@@ -451,7 +451,7 @@
+             require(r["epoch"] == epoch, "STALE_EPOCH")
+             require(self.clock.now() < r["expires"], "EXPIRED")
+             require(r["version"] == self.resource_version, "RESOURCE_VERSION")
+-            require(r["policy"] == self.policy, "POLICY_VERSION")
++            pass  # MUTANT: omit dispatch policy revalidation
+             # State is durable before the permit leaves this method.
+             c.execute("UPDATE actions SET state='DISPATCHED' WHERE iid=?", (iid,))
+             self._event(c, {"type": "DISPATCH", "iid": iid})

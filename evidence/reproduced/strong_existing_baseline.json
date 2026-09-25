@@ -1,0 +1,14 @@
+{
+  "attempts": 400,
+  "unique_ids": 200,
+  "workers": 16,
+  "budget": 100,
+  "effects": 100,
+  "free": 0,
+  "outcomes": {
+    "applied": 100,
+    "denied": 200,
+    "replayed": 100
+  },
+  "conclusion": "An ordinary correctly engineered transactional resource can provide aggregate budget and durable deduplication too. No uniqueness of the proposed branding is demonstrated."
+}

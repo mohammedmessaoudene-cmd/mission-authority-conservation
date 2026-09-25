@@ -1,0 +1,76 @@
+{
+  "accessed": "2026-09-25",
+  "items": [
+    {
+      "key": "agentcontracts",
+      "url": "https://arxiv.org/abs/2601.08815v3",
+      "status": "preprint, version-pinned; PDF reports workshop acceptance",
+      "used_for": "multidimensional budgets and hierarchical conservation prior art"
+    },
+    {
+      "key": "aip",
+      "url": "https://arxiv.org/abs/2603.24775v1",
+      "status": "preprint",
+      "used_for": "verifiable delegation prior art"
+    },
+    {
+      "key": "aiauthz",
+      "url": "https://arxiv.org/abs/2607.05518v1",
+      "status": "technical report",
+      "used_for": "off-host authorization prior art"
+    },
+    {
+      "key": "das",
+      "url": "https://www.ietf.org/archive/id/draft-das-rats-frontier-model-extraction-02.html",
+      "status": "individual Internet-Draft, work in progress",
+      "used_for": "effect-bound authority architecture"
+    },
+    {
+      "key": "auec",
+      "url": "https://doi.org/10.5281/zenodo.21815335",
+      "status": "attached report and GitHub release read; Zenodo direct retrieval unavailable here",
+      "used_for": "prior author work, editorial example and attribution"
+    },
+    {
+      "key": "aor",
+      "url": "https://github.com/mohammedmessaoudene-cmd/action-outcome-recovery/tree/v0.1.0-research",
+      "status": "version-pinned README retrieved through GitHub",
+      "used_for": "earlier unknown-outcome profile"
+    },
+    {
+      "key": "rar",
+      "url": "https://www.rfc-editor.org/rfc/rfc9396",
+      "status": "RFC"
+    },
+    {
+      "key": "eddsa",
+      "url": "https://www.rfc-editor.org/rfc/rfc8032",
+      "status": "RFC"
+    },
+    {
+      "key": "jcs",
+      "url": "https://www.rfc-editor.org/rfc/rfc8785",
+      "status": "RFC"
+    },
+    {
+      "key": "rats",
+      "url": "https://www.rfc-editor.org/rfc/rfc9334",
+      "status": "RFC"
+    },
+    {
+      "key": "sqlatomic",
+      "url": "https://sqlite.org/atomiccommit.html",
+      "status": "official documentation"
+    },
+    {
+      "key": "sqlwal",
+      "url": "https://sqlite.org/wal.html",
+      "status": "official documentation"
+    },
+    {
+      "key": "saltzer1975",
+      "url": "https://web.mit.edu/Saltzer/www/publications/protection/",
+      "status": "primary author-hosted publication"
+    }
+  ]
+}

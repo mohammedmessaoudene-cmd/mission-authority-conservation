@@ -1,0 +1,13 @@
+{
+  "name": "Mohammed Messaoudene",
+  "academic_title": "Maître de conférences B (MCB)",
+  "affiliation": "Belhadj Bouchaib University of Ain Temouchent, Ain Temouchent, Algeria",
+  "email": "mohammed.messaoudene@univ-temouchent.edu.dz",
+  "orcid": "0009-0007-4665-2548",
+  "affiliation_disclaimer": "This affiliation identifies the author's academic appointment only and does not imply sponsorship, collaboration, or endorsement by the university.",
+  "roles": [
+    "project initiative",
+    "research direction"
+  ],
+  "ai_assistance": "ChatGPT assisted with code, tests, research synthesis, writing and packaging. Codex performed source reconciliation, targeted evidence corrections, local reproduction, manuscript checks and publication preparation/execution. Three actual Codex subagents reviewed isolated engineering, scientific and editorial snapshots. Shared AI origin; no independent human or institutional peer review is claimed."
+}

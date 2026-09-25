@@ -1,0 +1,18 @@
+Mission Authority Conservation — licence allocation
+
+Copyright (c) 2026 Mohammed Messaoudene, to the extent copyright subsists and the
+licensor holds the relevant rights. AI assistance and attribution are documented
+in README.md and the report; exclusive human authorship of every generated line
+is not asserted.
+
+Software, tests, schemas, validation tools, executable evidence, root README,
+metadata and CI: Apache License 2.0 (LICENSES/Apache-2.0.txt).
+Paper, LaTeX manuscript and narrative specifications: Creative Commons
+Attribution 4.0 International (LICENSES/CC-BY-4.0.txt).
+The exact per-file assignment is in LICENSE-MAP.json. Third-party licence texts
+remain their respective publishers' notices and are not relicensed by this file.
+
+The canonical licence texts govern. This notice adds no use restrictions to them.
+Third-party dependencies are not vendored and retain their own licences.
+No previous AUEC or AOR release is relicensed. Academic affiliation is not a
+statement of institutional sponsorship, endorsement, or adjudicated ownership.

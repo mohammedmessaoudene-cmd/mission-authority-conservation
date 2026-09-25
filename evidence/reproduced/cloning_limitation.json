@@ -1,0 +1,7 @@
+{
+  "issued_root_budget": 100,
+  "copied_independent_gate_databases": 2,
+  "actual_toy_spent": 200,
+  "expected_limitation_reproduced": true,
+  "conclusion": "Privileged authority-state cloning violates the single-serialization-domain assumption. Both copies audit internally. No anti-rollback guarantee is claimed."
+}

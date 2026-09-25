@@ -1,0 +1,54 @@
+{
+  "id": "M1",
+  "test": "test_34_no_budget_overrun",
+  "target_line": 436,
+  "original_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+  "mutant_sha256": "ec0f1e344926ec152ddde75eb069d414b877cc80d068794cc8d8e2081486ab48",
+  "single_line_replacement": true,
+  "baseline": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_34_no_budget_overrun",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "denial": "BUDGET"
+    },
+    "target_line_executed": true,
+    "log": "test_34_no_budget_overrun (test_contract.ContractTests.test_34_no_budget_overrun) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.429s\n\nOK\n"
+  },
+  "mutant": {
+    "core_sha256": "ec0f1e344926ec152ddde75eb069d414b877cc80d068794cc8d8e2081486ab48",
+    "optimization": 0,
+    "test": "test_34_no_budget_overrun",
+    "tests_run": 1,
+    "successful": false,
+    "failures": 1,
+    "errors": 0,
+    "direct": {
+      "unsafe": true,
+      "remaining_money": -1
+    },
+    "target_line_executed": true,
+    "log": "test_34_no_budget_overrun (test_contract.ContractTests.test_34_no_budget_overrun) ... FAIL\n\n======================================================================\nFAIL: test_34_no_budget_overrun (test_contract.ContractTests.test_34_no_budget_overrun)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"H:\\SSL_publication_autorisee_20260925\\private_state\\tmp_execution\\authority-mutation-f1cjgg01\\tests\\test_contract.py\", line 125, in test_34_no_budget_overrun\n    self.denied('BUDGET',self.s.reserve,self.s.make('b',amount=1));self.g.audit()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"H:\\SSL_publication_autorisee_20260925\\private_state\\tmp_execution\\authority-mutation-f1cjgg01\\tests\\test_contract.py\", line 18, in denied\n    with self.assertRaises(Denied) as ctx:\nAssertionError: Denied not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.682s\n\nFAILED (failures=1)\n"
+  },
+  "restored": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_34_no_budget_overrun",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "denial": "BUDGET"
+    },
+    "target_line_executed": true,
+    "log": "test_34_no_budget_overrun (test_contract.ContractTests.test_34_no_budget_overrun) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.707s\n\nOK\n"
+  },
+  "passed": true
+}

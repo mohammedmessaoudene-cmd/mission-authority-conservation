@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite the exact version and its archived evidence."
+type: software
+title: "Mission Authority Conservation: Executable Research Profile"
+version: "0.1.0-research"
+doi: "10.5281/zenodo.22967206"
+date-released: "2026-09-25"
+repository-code: "https://github.com/mohammedmessaoudene-cmd/mission-authority-conservation"
+url: "https://doi.org/10.5281/zenodo.22967206"
+authors:
+  - family-names: "Messaoudene"
+    given-names: "Mohammed"
+    orcid: "https://orcid.org/0009-0007-4665-2548"
+    affiliation: "Belhadj Bouchaib University of Ain Temouchent, Algeria"
+license: Apache-2.0
+abstract: "A software-only reference and conformance corpus for delegated allocations, temporal approvals and uncertain effects. Not production security or independent certification. Paper and narrative documentation are separately licensed CC BY 4.0."

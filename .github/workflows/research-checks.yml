@@ -1,0 +1,34 @@
+name: Bounded research checks
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Fetch exact public source revision
+        shell: bash
+        env:
+          GIT_TERMINAL_PROMPT: '0'
+          SOURCE_REPO: ${{ github.repository }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          git init source
+          cd source
+          git remote add origin "https://github.com/${SOURCE_REPO}.git"
+          git fetch --depth 1 origin "$SOURCE_SHA"
+          git checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+      - name: Install isolated dependency and execute
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+          .venv/bin/python -B run_all.py --out local-results-ci
+          cat local-results-ci/summary.json >> "$GITHUB_STEP_SUMMARY"

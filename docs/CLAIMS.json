@@ -1,0 +1,94 @@
+[
+  {
+    "id": "C01",
+    "claim": "98 ordinary test methods pass: 83 contract, six local process and nine evidence regressions",
+    "status": "executed",
+    "evidence": [
+      "evidence/reproduced/unit_tests.json",
+      "evidence/reproduced/unit_tests.log"
+    ],
+    "limit": "Selected Windows environment; no production certification."
+  },
+  {
+    "id": "C02",
+    "claim": "10000 requests have zero disagreements with the authored oracle",
+    "status": "executed",
+    "evidence": [
+      "evidence/reproduced/generated_cases.json"
+    ],
+    "limit": "Ten authored families, mostly admission checks, not external LLM attacks."
+  },
+  {
+    "id": "C03",
+    "claim": "Finite reference model safe in 1638 reachable states /5265 transitions",
+    "status": "executed",
+    "evidence": [
+      "evidence/reproduced/model_check.json"
+    ],
+    "limit": "No proof that Python refines the abstract model."
+  },
+  {
+    "id": "C04",
+    "claim": "Four selected source changes each expose the expected unsafe behavior",
+    "status": "executed",
+    "evidence": [
+      "evidence/reproduced/source_mutations/summary.json",
+      "evidence/reproduced/source_mutations/M1.json",
+      "evidence/reproduced/source_mutations/M2.json",
+      "evidence/reproduced/source_mutations/M3.json",
+      "evidence/reproduced/source_mutations/M4.json"
+    ],
+    "limit": "Not comprehensive mutation coverage or independent review."
+  },
+  {
+    "id": "C05",
+    "claim": "Ordinary SQL baseline supplies the compared budget/deduplication guarantees",
+    "status": "executed",
+    "evidence": [
+      "evidence/reproduced/strong_existing_baseline.json"
+    ],
+    "limit": "Baseline covers its selected objective, not entire wire profile."
+  },
+  {
+    "id": "C06",
+    "claim": "Cloned authority spends 200 against one original 100 allocation",
+    "status": "executed_negative",
+    "evidence": [
+      "evidence/reproduced/cloning_limitation.json"
+    ],
+    "limit": "Privileged cloning invalidates the positive trust assumption."
+  },
+  {
+    "id": "C07",
+    "claim": "Per-cap conservation implies rooted-tree accounting conservation",
+    "status": "conditional_deduction",
+    "evidence": [
+      "paper/main.tex",
+      "docs/SPEC.md"
+    ],
+    "limit": "Serialized specified transitions and nonnegative state; not mechanized code proof."
+  },
+  {
+    "id": "C08",
+    "claim": "Actual effects stay bounded by the root allocation",
+    "status": "conditional_deduction",
+    "evidence": [
+      "paper/main.tex"
+    ],
+    "limit": "Honest measured costs, unique effects, terminal refusal, no bypass or cloning."
+  },
+  {
+    "id": "C09",
+    "claim": "MCP/A2A compatibility, hardware attestation, general anti-rollback, semantic truth",
+    "status": "not_claimed",
+    "evidence": [],
+    "limit": "Not implemented or evaluated in this artifact."
+  },
+  {
+    "id": "C10",
+    "claim": "Novel worldwide, necessary standard, accepted prestigious journal",
+    "status": "not_established",
+    "evidence": [],
+    "limit": "No exhaustive novelty search, adoption study or external peer review."
+  }
+]

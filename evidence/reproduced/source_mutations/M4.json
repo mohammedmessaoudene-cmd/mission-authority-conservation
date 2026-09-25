@@ -1,0 +1,54 @@
+{
+  "id": "M4",
+  "test": "test_78_policy_change_before_dispatch",
+  "target_line": 454,
+  "original_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+  "mutant_sha256": "2a45c3df330e05e04959b00df6c7d16c358a7864829923f7c48d3423804473f1",
+  "single_line_replacement": true,
+  "baseline": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_78_policy_change_before_dispatch",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "denial": "POLICY_VERSION"
+    },
+    "target_line_executed": true,
+    "log": "test_78_policy_change_before_dispatch (test_contract.ContractTests.test_78_policy_change_before_dispatch) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.284s\n\nOK\n"
+  },
+  "mutant": {
+    "core_sha256": "2a45c3df330e05e04959b00df6c7d16c358a7864829923f7c48d3423804473f1",
+    "optimization": 0,
+    "test": "test_78_policy_change_before_dispatch",
+    "tests_run": 1,
+    "successful": false,
+    "failures": 1,
+    "errors": 0,
+    "direct": {
+      "unsafe": true,
+      "dispatch_after_policy_change": true
+    },
+    "target_line_executed": true,
+    "log": "test_78_policy_change_before_dispatch (test_contract.ContractTests.test_78_policy_change_before_dispatch) ... FAIL\n\n======================================================================\nFAIL: test_78_policy_change_before_dispatch (test_contract.ContractTests.test_78_policy_change_before_dispatch)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"H:\\SSL_publication_autorisee_20260925\\private_state\\tmp_execution\\authority-mutation-ywi0kf__\\tests\\test_contract.py\", line 277, in test_78_policy_change_before_dispatch\n    self.denied('POLICY_VERSION',self.g.begin,p['iid'])\n  File \"H:\\SSL_publication_autorisee_20260925\\private_state\\tmp_execution\\authority-mutation-ywi0kf__\\tests\\test_contract.py\", line 18, in denied\n    with self.assertRaises(Denied) as ctx:\nAssertionError: Denied not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.461s\n\nFAILED (failures=1)\n"
+  },
+  "restored": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_78_policy_change_before_dispatch",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "denial": "POLICY_VERSION"
+    },
+    "target_line_executed": true,
+    "log": "test_78_policy_change_before_dispatch (test_contract.ContractTests.test_78_policy_change_before_dispatch) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.396s\n\nOK\n"
+  },
+  "passed": true
+}

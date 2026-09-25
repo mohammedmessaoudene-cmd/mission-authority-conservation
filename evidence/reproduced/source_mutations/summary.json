@@ -1,0 +1,7 @@
+{
+  "controls": 4,
+  "passed": 4,
+  "original_unchanged": true,
+  "execution": "four concurrent experiment workers; not LLM agents or independent reviewers",
+  "scope": "four selected single-line source mutations, focused test and direct unsafe observation; not exhaustive mutation coverage"
+}

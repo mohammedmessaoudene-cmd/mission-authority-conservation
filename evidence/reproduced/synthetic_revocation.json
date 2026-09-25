@@ -1,0 +1,126 @@
+{
+  "rows": [
+    {
+      "nodes": 2,
+      "revocation_delay_ms": 0,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 0,
+      "copied_budget_effect_units": 0,
+      "disjoint_escrow_effect_units": 0,
+      "root_budget": 100
+    },
+    {
+      "nodes": 2,
+      "revocation_delay_ms": 100,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 5,
+      "copied_budget_effect_units": 10,
+      "disjoint_escrow_effect_units": 10,
+      "root_budget": 100
+    },
+    {
+      "nodes": 2,
+      "revocation_delay_ms": 1000,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 50,
+      "copied_budget_effect_units": 100,
+      "disjoint_escrow_effect_units": 100,
+      "root_budget": 100
+    },
+    {
+      "nodes": 2,
+      "revocation_delay_ms": null,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 100,
+      "copied_budget_effect_units": 200,
+      "disjoint_escrow_effect_units": 100,
+      "root_budget": 100
+    },
+    {
+      "nodes": 10,
+      "revocation_delay_ms": 0,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 0,
+      "copied_budget_effect_units": 0,
+      "disjoint_escrow_effect_units": 0,
+      "root_budget": 100
+    },
+    {
+      "nodes": 10,
+      "revocation_delay_ms": 100,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 5,
+      "copied_budget_effect_units": 50,
+      "disjoint_escrow_effect_units": 50,
+      "root_budget": 100
+    },
+    {
+      "nodes": 10,
+      "revocation_delay_ms": 1000,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 50,
+      "copied_budget_effect_units": 500,
+      "disjoint_escrow_effect_units": 100,
+      "root_budget": 100
+    },
+    {
+      "nodes": 10,
+      "revocation_delay_ms": null,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 100,
+      "copied_budget_effect_units": 1000,
+      "disjoint_escrow_effect_units": 100,
+      "root_budget": 100
+    },
+    {
+      "nodes": 50,
+      "revocation_delay_ms": 0,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 0,
+      "copied_budget_effect_units": 0,
+      "disjoint_escrow_effect_units": 0,
+      "root_budget": 100
+    },
+    {
+      "nodes": 50,
+      "revocation_delay_ms": 100,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 5,
+      "copied_budget_effect_units": 250,
+      "disjoint_escrow_effect_units": 100,
+      "root_budget": 100
+    },
+    {
+      "nodes": 50,
+      "revocation_delay_ms": 1000,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 50,
+      "copied_budget_effect_units": 2500,
+      "disjoint_escrow_effect_units": 100,
+      "root_budget": 100
+    },
+    {
+      "nodes": 50,
+      "revocation_delay_ms": null,
+      "token_ttl_ms": 2000,
+      "attempt_step_ms": 20,
+      "attempts_per_node_before_stop": 100,
+      "copied_budget_effect_units": 5000,
+      "disjoint_escrow_effect_units": 100,
+      "root_budget": 100
+    }
+  ],
+  "scope": "deterministic synthetic schedule; no consensus implementation, no real network, no statistical SLO claim",
+  "assumption": "escrow partitions cannot be copied or rolled back and executors enforce local durable single-use; clock trustworthy"
+}

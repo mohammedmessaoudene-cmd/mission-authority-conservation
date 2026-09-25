@@ -1,0 +1,55 @@
+{
+  "id": "M2",
+  "test": "test_56_unknown_holds_budget",
+  "target_line": 473,
+  "original_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+  "mutant_sha256": "7468c5a58af3b4428c498d2b9be7f481b4c3fab4476304e789655485e79dc4cd",
+  "single_line_replacement": true,
+  "baseline": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_56_unknown_holds_budget",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "denial": "UNSAFE_REFUND"
+    },
+    "target_line_executed": true,
+    "log": "test_56_unknown_holds_budget (test_contract.ContractTests.test_56_unknown_holds_budget) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.320s\n\nOK\n"
+  },
+  "mutant": {
+    "core_sha256": "7468c5a58af3b4428c498d2b9be7f481b4c3fab4476304e789655485e79dc4cd",
+    "optimization": 0,
+    "test": "test_56_unknown_holds_budget",
+    "tests_run": 1,
+    "successful": false,
+    "failures": 1,
+    "errors": 0,
+    "direct": {
+      "unsafe": true,
+      "initial_money": 1000,
+      "actual_effect_money": 1010
+    },
+    "target_line_executed": true,
+    "log": "test_56_unknown_holds_budget (test_contract.ContractTests.test_56_unknown_holds_budget) ... FAIL\n\n======================================================================\nFAIL: test_56_unknown_holds_budget (test_contract.ContractTests.test_56_unknown_holds_budget)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"H:\\SSL_publication_autorisee_20260925\\private_state\\tmp_execution\\authority-mutation-xfn897br\\tests\\test_contract.py\", line 193, in test_56_unknown_holds_budget\n    self.denied('UNSAFE_REFUND',self.g.cancel,'a');self.g.audit()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"H:\\SSL_publication_autorisee_20260925\\private_state\\tmp_execution\\authority-mutation-xfn897br\\tests\\test_contract.py\", line 18, in denied\n    with self.assertRaises(Denied) as ctx:\nAssertionError: Denied not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.537s\n\nFAILED (failures=1)\n"
+  },
+  "restored": {
+    "core_sha256": "7982180715b1d655574d2713f6c150f355c2e3d2ccbbc811fc2cb19241172540",
+    "optimization": 0,
+    "test": "test_56_unknown_holds_budget",
+    "tests_run": 1,
+    "successful": true,
+    "failures": 0,
+    "errors": 0,
+    "direct": {
+      "unsafe": false,
+      "denial": "UNSAFE_REFUND"
+    },
+    "target_line_executed": true,
+    "log": "test_56_unknown_holds_budget (test_contract.ContractTests.test_56_unknown_holds_budget) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.570s\n\nOK\n"
+  },
+  "passed": true
+}
