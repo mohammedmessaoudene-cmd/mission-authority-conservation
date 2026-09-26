@@ -1,0 +1,20 @@
+AIGP documentation snapshot 0.2.0-docs
+
+Unless a document expressly states otherwise, the narrative specification,
+integration contracts, security notes, manuscript and associated documentation
+in this aigp/ directory are licensed under the Creative Commons Attribution
+4.0 International Public License (CC BY 4.0).
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+Project initiative and direction: Mohammed Messaoudene.
+AI-assisted preparation is disclosed in README.md and PROVENANCE.md.
+Attribution should identify the author, work title, exact version, source URL
+and changes, as applicable under the license. No institutional endorsement,
+patent license, trademark permission or warranty is implied by this notice.
+Rights not controlled by the licensor are not offered by this notice.
+
+This is not a relicensing of Mission Authority Conservation, AUEC or AOR.
+The independently prepared executable AIGP research package is designated
+Apache-2.0, but has not been uploaded as part of this documentation snapshot.
