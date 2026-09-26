@@ -1,0 +1,47 @@
+name: Publish AIGP research profile
+
+on:
+  push:
+    branches: [aigp-publication-v0.2.0]
+    paths: ['.aigp-publication/READY.json']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aigp-research-publication-v0.2.0
+  cancel-in-progress: false
+
+jobs:
+  validate-and-publish:
+    if: github.repository == 'mohammedmessaoudene-cmd/mission-authority-conservation'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and unpack reviewed public sources
+        run: python .aigp-publication/publish.py unpack
+      - name: Install pinned test dependencies and paper toolchain
+        run: |
+          python -m pip install -r aigp/requirements.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-publishers
+      - name: Reproduce the full research corpus and compile the paper
+        run: |
+          cd aigp
+          python -B run_checks.py
+          python -B tools/build_paper.py
+      - name: Verify artifacts and publish the research snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python .aigp-publication/publish.py publish
