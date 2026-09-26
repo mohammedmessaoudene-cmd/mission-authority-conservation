@@ -95,3 +95,16 @@ except machine-readable claims and source indexes explicitly mapped as Apache-2.
 See `LICENSE` and `LICENSE-MAP.json`. Dependencies retain their own licences.
 Previous AUEC/AOR releases are not modified or relicensed. No implied trademark,
 legal-priority, insurance or certification claim accompanies this research release.
+
+## Separate AIGP architecture documentation
+
+[AIGP: Federated Acceptance and Evidence-Bound Enforcement](aigp/)
+is a broader research architecture covering identity, recipient-local trust,
+session-bound appraisal, delegation, revocation, guarantees and effects.
+The supplement publishes documentation and the manuscript under its own
+[CC BY 4.0 notice](aigp/LICENSE). **Its executable implementation is not
+uploaded**; local software results are identified as such.
+
+This addition does not replace the MAC 0.1.0 software or research report.
+The two Zenodo DOIs above identify MAC, not the AIGP supplement. No new AIGP
+Zenodo record or production qualification is asserted here.
