@@ -1,0 +1,6 @@
+AIGP documentation snapshot 0.2.0-docs
+Authorization: the project owner explicitly requested GitHub publication on 26 September 2026.
+Scope: narrative architecture, operational integration requirements, security limits, manuscript and local-validation documentation only.
+The executable reference implementation was not uploaded because platform checks blocked software-transfer calls.
+This marker triggers only manuscript compilation and a document-output commit.
+It does not authorize a transfer of blocked software, payments, external contacts, a new Zenodo record, or modification of previous releases.
