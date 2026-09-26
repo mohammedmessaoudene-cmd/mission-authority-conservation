@@ -29,8 +29,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify and unpack reviewed public sources
-        run: python .aigp-publication/publish.py unpack
+      - name: Verify directly published public sources
+        run: python .aigp-publication/verify_sources.py
       - name: Install pinned test dependencies and paper toolchain
         run: |
           python -m pip install -r aigp/requirements.txt
