@@ -1,14 +1,26 @@
 # AIGP: Federated Acceptance and Evidence-Bound Enforcement
 
-**Research architecture 0.2.0-research. Not peer reviewed. Not a production trust network or an accepted standard.**
+**Documentation snapshot 0.2.0-docs, describing research profile 0.2.0. Not peer reviewed. Not a production trust network or an accepted standard.**
 
 AIGP retains the full architectural scope: operational agent identity, principal identity, recipient-local acceptance, policy enforcement, session-bound attestation results, transparency, delegation, revocation, reputation, approvals, guarantee exposure, and effect accounting and recovery. It is not just a mission-budget counter and does not replace TLS, MCP, A2A, or their authorization mechanisms.
 
+## Read the architecture
+
+- [Complete research specification](SPEC.md)
+- [Native integration and operational activation contracts](INTEGRATION.md)
+- [Trust assumptions and unresolved security limits](SECURITY.md)
+- [Research manuscript — editable LaTeX](paper/main.tex)
+- [Local validation record and its limitations](VALIDATION.md)
+- [Provenance and AI assistance](PROVENANCE.md)
+- [License](LICENSE) and [citation metadata](CITATION.cff)
+
+The documentation build compiles only the paper, never the blocked reference implementation. When completed, its PDF and build checksums are stored in [paper/](paper/).
+
 ## Publication status
 
-This directory publishes the research documentation. **The complete executable implementation is not yet uploaded here.** The originating assistant reproduced the software locally, but the platform blocked its code-transfer tool calls. A passing local test result is not evidence that source files are present in this repository. The former Mission Authority Conservation 0.1.0 release and its Zenodo DOIs do not identify the broader AIGP architecture.
+This directory publishes the architecture documentation and manuscript. **The complete executable implementation is not uploaded here.** The originating assistant reproduced the software locally, but the platform blocked its code-transfer tool calls. A passing local test result is not evidence that source files are present in this repository. The former Mission Authority Conservation 0.1.0 release and its Zenodo DOIs do not identify the broader AIGP architecture.
 
-The publication includes the architecture specification and manuscript sources as they become available in this directory. No new Zenodo DOI, institutional endorsement, patent, or exclusive worldwide priority is claimed.
+No new Zenodo DOI, institutional endorsement, patent, or exclusive worldwide priority is claimed. The current publication documents only the material actually accessible in this directory.
 
 ## What the architecture connects
 
@@ -26,6 +38,6 @@ The known privileged-cloning limit remains: two copies of an authority funded wi
 
 Project initiative and direction: **Mohammed Messaoudene**. Design synthesis, implementation, tests and writing used disclosed AI assistance. Requester-supplied reports attributed to Grok, Claude and DeepSeek informed the architecture. AI review perspectives are not independent institutional committees.
 
-This documentation and the paper: **CC BY 4.0**. The separately prepared software is designated Apache-2.0, but is not presently distributed through this directory. Existing AUEC and AOR licenses and releases are unchanged.
+This documentation and the paper: **CC BY 4.0**. The separately prepared software is designated Apache-2.0, but is not distributed through this directory. Existing AUEC and AOR licenses and releases are unchanged.
 
 M. Messaoudene is a Maître de conférences B (MCB) at Belhadj Bouchaib University of Ain Temouchent, Ain Temouchent, Algeria (e-mail: mohammed.messaoudene@univ-temouchent.edu.dz; ORCID: 0009-0007-4665-2548). This affiliation identifies the author's academic appointment only and does not imply sponsorship, collaboration, or endorsement by the university.
