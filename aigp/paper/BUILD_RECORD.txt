@@ -1,0 +1,7 @@
+AIGP documentation build; NOT a software test or software publication.
+Build UTC: 2026-09-26T01:29:35Z
+Document source commit: 1cbd3e49957adb683e2bdc92b709eb2c2d5c5243
+Workflow: https://github.com/mohammedmessaoudene-cmd/mission-authority-conservation/actions/runs/36208532055
+pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)
+The executable AIGP implementation is not uploaded or executed by this workflow.
+No release or Zenodo record is created.

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the documentation snapshot and its exact GitHub commit. This directory does not distribute the executable AIGP implementation."
+type: software
+title: "AIGP: Federated Acceptance and Evidence-Bound Enforcement for AI Agents — Research Architecture Documentation"
+version: 0.2.0-docs
+date-released: "2026-09-26"
+authors:
+  - family-names: Messaoudene
+    given-names: Mohammed
+    orcid: "https://orcid.org/0009-0007-4665-2548"
+    affiliation: "Belhadj Bouchaib University of Ain Temouchent, Algeria; academic appointment only, no institutional endorsement"
+license: CC-BY-4.0
+url: "https://github.com/mohammedmessaoudene-cmd/mission-authority-conservation/tree/main/aigp"
+abstract: "Documentation of a full-scope federated acceptance and enforcement research profile covering identity, recipient-local trust, delegation, session-bound appraisal, revocation, reputation, simulated guarantees and uncertain effects. A local software fixture was tested; the executable source is not included in this documentation publication. Not peer reviewed, not an accepted standard and not production-ready. No new DOI is claimed."
+preferred-citation:
+  type: report
+  title: "AIGP: Federated Acceptance and Evidence-Bound Enforcement for AI Agents"
+  authors:
+    - family-names: Messaoudene
+      given-names: Mohammed
+      orcid: "https://orcid.org/0009-0007-4665-2548"
+  year: 2026
+  version: 0.2.0-docs
+  url: "https://github.com/mohammedmessaoudene-cmd/mission-authority-conservation/tree/main/aigp/paper"
