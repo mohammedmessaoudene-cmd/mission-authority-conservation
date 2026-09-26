@@ -1,0 +1,55 @@
+name: Build AIGP documentation only
+
+on:
+  push:
+    branches: [aigp-publication-v0.2.0]
+    paths: ['aigp/PUBLISH_DOCUMENTATION.txt']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aigp-documentation-0.2.0
+  cancel-in-progress: false
+
+jobs:
+  paper:
+    if: github.repository == 'mohammedmessaoudene-cmd/mission-authority-conservation'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Install document typesetting dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-publishers
+      - name: Compile the published document without shell escape
+        working-directory: aigp/paper
+        run: |
+          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
+          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
+          if grep -E 'Overfull|undefined' main.log; then
+            echo 'Document validation failed.'
+            exit 1
+          fi
+      - name: Record and commit only the document outputs
+        run: |
+          sha256sum aigp/paper/main.tex aigp/paper/main.pdf > aigp/paper/SHA256SUMS.txt
+          {
+            echo 'AIGP documentation build; NOT a software test or software publication.'
+            printf 'Build UTC: '; date -u +%Y-%m-%dT%H:%M:%SZ
+            printf 'Document source commit: %s\n' "$GITHUB_SHA"
+            printf 'Workflow: https://github.com/%s/actions/runs/%s\n' "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
+            pdflatex --version | head -n 1
+            echo 'The executable AIGP implementation is not uploaded or executed by this workflow.'
+            echo 'No release or Zenodo record is created.'
+          } > aigp/paper/BUILD_RECORD.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add aigp/paper/main.pdf aigp/paper/SHA256SUMS.txt aigp/paper/BUILD_RECORD.txt
+          git commit -m 'Build AIGP documentation PDF and record source checksums'
+          git push origin HEAD:refs/heads/aigp-publication-v0.2.0
