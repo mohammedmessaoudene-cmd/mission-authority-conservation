@@ -6,15 +6,15 @@ AIGP retains the full architectural scope: operational agent identity, principal
 
 ## Read the architecture
 
+- [Research paper — PDF](paper/main.pdf) and [editable LaTeX](paper/main.tex)
 - [Complete research specification](SPEC.md)
 - [Native integration and operational activation contracts](INTEGRATION.md)
 - [Trust assumptions and unresolved security limits](SECURITY.md)
-- [Research manuscript — editable LaTeX](paper/main.tex)
 - [Local validation record and its limitations](VALIDATION.md)
 - [Provenance and AI assistance](PROVENANCE.md)
 - [License](LICENSE) and [citation metadata](CITATION.cff)
 
-The documentation build compiles only the paper, never the blocked reference implementation. When completed, its PDF and build checksums are stored in [paper/](paper/).
+The paper was compiled successfully on GitHub from the published LaTeX source. Its [build record](paper/BUILD_RECORD.txt) and [checksums](paper/SHA256SUMS.txt) are available. This document build does not execute or transfer the AIGP reference implementation.
 
 ## Publication status
 
