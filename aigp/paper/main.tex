@@ -1,0 +1,224 @@
+\documentclass[journal,10pt]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs,array,url,microtype,balance}
+\usepackage[hidelinks]{hyperref}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\AND}{\mathbin{\wedge}}
+\markboth{AIGP Research Profile, Documentation Edition 0.2.0, September 2026 --- Not Peer Reviewed}{Messaoudene: Federated Acceptance and Evidence-Bound Enforcement}
+\title{AIGP: Federated Acceptance and Evidence-Bound Enforcement for AI Agents}
+\author{Mohammed Messaoudene\thanks{M. Messaoudene is a Ma\^itre de conf\'erences B (MCB) at Belhadj Bouchaib University of Ain Temouchent, Ain Temouchent, Algeria (e-mail: \url{mohammed.messaoudene@univ-temouchent.edu.dz}; ORCID: \mbox{0009-0007-4665-2548}). This affiliation identifies the author's academic appointment only and does not imply sponsorship, collaboration, or endorsement by the university.}}
+\begin{document}\maketitle
+\begin{abstract}
+A credential can identify an agent without establishing whether a particular recipient should accept its actions. We investigate a federated enforcement profile that keeps operational identity, principal identity, local acceptance policy, attestation results, revocation, guarantees and execution accounting within one evidence-bound decision. The objective is an overlay on existing agent protocols, not a replacement transport or universal issuer. A software-test implementation connects separate trust roles to real mutually authenticated TLS 1.3, session exporters, restricted signed capabilities, persistent revocation checkpoints, simulated aggregate guarantee exposure and durable effect receipts. Limited MCP and A2A harness paths exercise the same execution pipeline. An initial 87-test suite missed four composition defects; targeted review exposed and corrected them. The completed corpus contains 105 test methods, 256 combinations of eight fixture faults and four single-guard mutations that produce their prohibited effects. A JavaScript verifier checks 17 signed objects and selected cross-object bindings. The results support the executed software profile, not hardware-backed or legally operational trust. Native Biscuit/Cedar engines, live hardware evidence, qualified identity and guarantee providers, and official protocol conformance remain explicit activation gates. Privileged cloning of the serialization domain still produces 200 units of effects from an original allocation of 100.
+\end{abstract}
+\begin{IEEEkeywords}
+agent governance, federated trust, reference monitors, delegation, remote attestation, revocation, evidence binding, MCP, A2A
+\end{IEEEkeywords}
+
+\section{Introduction}
+An agent acting across organizational boundaries presents more than an authentication problem. A recipient may recognize its signing key but reject the principal, distrust its appraisal verifier, require a different guarantee, or refuse the particular operation. These decisions should not be collapsed into a single statement that an agent is ``trusted.'' They also cannot be delegated to the agent's own reasoning.
+
+The architectural objective considered here is an executable infrastructure for these decisions. Operational identity and delegated authority must connect to the instance presenting them, the recipient's current acceptance policy, and the resource that eventually produces an effect. A lost response must not restore authority that may already have been consumed. A signed assurance label must not promote a software simulation into a hardware-backed instance. A shared guarantee must not be independently allocated in full by several recipients.
+
+This objective originated in requester-supplied architecture reports attributed to Grok, Claude and DeepSeek, together with a strategic report on delegation provenance and discovery--execution consistency. The reports converge on a reference-monitor architecture with multiple trust roles. They do not constitute independent empirical validation, and several proposed guarantees require more specific assumptions. We retain the full architectural scope while distinguishing implemented mechanisms, executed fixtures and external activation requirements.
+
+Earlier work in the same research program concentrated on mission budgets and uncertain outcomes. That remains a necessary subsystem; it is not the replacement for operational identity, appraisal, revocation or guarantees. The present study asks whether those functions can be connected in one inspectable acceptance path while each relying party retains its own trust configuration.
+
+The research contribution comprises a full-scope profile, a locally tested software implementation, a record of composition defects and an adversarial corpus. The present public edition distributes the architecture and manuscript, not the executable implementation; the availability boundary is stated in Section VIII. No new cryptographic primitive, first worldwide invention, legal novelty, market demand or standards adoption is claimed. The name AIGP is a working identifier inherited from the supplied reports.
+
+\section{Existing Mechanisms and Scope}
+RATS distinguishes the attester, verifier, evidence, appraisal policy, attestation result and relying party~\cite{rats}. These roles are useful here because a verifier's statement is an input to the recipient's decision, not a decision that all recipients must accept. EAT defines attestation-oriented claims in CWT or JWT form~\cite{eat}. Our software-test result is a separate restricted JSON object; it is not a native EAT or a verified manufacturer quote.
+
+SPIFFE supplies workload identities and trust-domain concepts~\cite{spiffe}. The implementation uses real certificate validation and pins expected URI identities under a temporary local CA. This exercises the endpoint-binding requirement but is not a running SPIRE deployment or a qualified workload-enrollment procedure.
+
+Biscuit offers a native capability-token implementation with attenuation, while Cedar provides a separate policy language and authorization engine~\cite{biscuit,cedar}. They are targets for native integration, not labels for the custom research engine. Installation was attempted in the execution environment, but package-host DNS resolution failed. The locally tested implementation therefore identifies its own wire and policy profile explicitly. An unavailable engine is not silently replaced when a native engine is requested.
+
+TLS 1.3 specifies exporters that can bind application context to an established connection~\cite{tls}. We exercise actual exporter values at both authenticated endpoints. This supports the tested session-binding property; it does not show that a key resides in a TEE, that every side effect is mediated, or that all attestation-in-handshake designs are intrinsically unsafe.
+
+MCP defines initialization, capability negotiation and tool operations~\cite{mcp-life,mcp-tools}. A2A defines agent messages and protocol bindings~\cite{a2a}. The experiments use a limited MCP stdio path and an A2A SendMessage JSON-RPC path over loopback HTTP. Both invoke the same research pipeline. Neither is presented as an unchanged official SDK or complete conformance run.
+
+AP2 distinguishes checkout and payment mandates and their transaction-specific authorizations~\cite{ap2}. An operational binding must verify such mandates natively and connect them to an actual provider's reservation and settlement guarantees. The current exposure ledger is not AP2, a payment instrument or an insurer. GLEIF's vLEI ecosystem defines an organizational-identity framework~\cite{vlei}; our fictional registry does not implement it. Identity, solvency, consent and legal enforceability remain different concerns.
+
+\section{System and Threat Model}
+\subsection{Roles and trust domains}
+The system distinguishes an agent, a principal, an operational issuer, an identity registry, an appraisal verifier, a guarantor, a transparency log, an approver, reputation reporters, relying parties, an accounting ledger and effect resources. Each has a separate signing role in the fixture. An RP configures accepted keys separately for each class. A valid signature from an operational issuer does not make the same key an accepted guarantor or approver.
+
+The principal-to-issuer relationship is itself bound in the registry statement. The operational Agent Binding Certificate (ABC) binds that identity reference, principal, agent public key, workload TLS key digest, kernel digest, tool-manifest digest, exact root-capability digest, guarantee reference and validity interval. A recipient can reject an otherwise well-formed ABC because its own issuer set excludes the signer.
+
+This design separates a common exchange format from a common global root. Two recipients can exchange and interpret the same evidence while choosing different accepted issuers. The experiment demonstrates that technical property. It does not choose a political authority or assert that a particular legal regime must govern the federation.
+
+\subsection{Adversary and assumptions}
+An adversary may alter, replay or combine messages, substitute a capability with the same identifier, present an untrusted issuer, omit fresh revocation information, widen a delegation, exceed a shared allocation, or retry an effect after losing its response. The adversary may submit false but syntactically valid content within an allowed operation.
+
+The initial RP roots and policies, principal provisioning, cryptographic implementations, clocks, ledger and resource implementations are trusted. Signing keys are software keys. Administrative Python methods are internal trusted interfaces, not authenticated public management APIs. Selected tests use separate processes; this does not establish OS isolation from a privileged adversary.
+
+The resource performs only local SQLite effects. The study does not assume that a real bank, mail service or actuator can atomically produce an external effect and a local receipt. A compromised issuer, authorized dishonest reporter, malicious RP, hostile verifier or cloned ledger can violate assumptions. Explicit experiments preserve the cloned-ledger limit rather than hiding it behind signature validity.
+
+\section{Federated Acceptance Contract}
+\subsection{A conjunction of distinct decisions}
+Let $R$ be an RP, $a$ a proposed action, $E$ its evidence bundle and $S$ its session. Acceptance requires
+\begin{align}
+\operatorname{Accept}_{R}(a,E,S) \Rightarrow {}&
+ I_R(E) \AND P_R(E) \AND K_R(E,S) \nonumber\\
+ &\AND V_R(E) \AND C_R(a,E) \nonumber\\
+ &\AND H_R(a,E) \AND B_R(a,E) \AND L_R(a),
+\end{align}
+where $I$ checks accepted issuing roles, $P$ binds the principal, $K$ binds approved execution claims to the connection, $V$ checks validity and revocation, $C$ checks exact delegated scope, $H$ checks any required approval, $B$ checks guarantee terms, and $L$ enforces current local policy. The implication is deliberate: satisfying these predicates is not a claim of semantic truth or universal safety.
+
+An admission remains distinct from a resource permit. The shared ledger must first reserve the resources and exposure demanded by the action. The resulting permit binds the exact admission, action, resource audience, cost, manifest and effective expiry. Successful transport delivery alone never grants authority.
+
+\subsection{Session-bound evidence}
+Both TLS endpoints validate the temporary CA chain and expected URI identity. The server generates a fresh nonce and obtains a real TLS 1.3 exporter. The signed appraisal binds the exporter, nonce, workload SPKI digest, ABC digest, kernel and manifest. A separate proof of possession binds the same context to the agent key. The server persists challenge use and refuses reuse.
+
+An appraisal verifier is authorized for a set of assurance modes in RP policy. The fixture key is authorized only for \code{software-test}. Even a valid new signature by that key cannot assert \code{hardware}. The stronger profile rejects it. A real hardware integration must establish the source and appraisal of vendor evidence, not merely change a string in the payload.
+
+A session commits to the RP, ABC, connection context, policy digest and observed revocation sequences. Its expiry is bounded by the shortest required evidence lifetime and a 20-second experimental session limit. The clock is injected for deterministic tests. Documents are checked again at action admission and immediately before dispatch. A changed policy or sequence requires a new session rather than expanding old authority.
+
+\subsection{Exact capabilities and discovery consistency}
+A signed capability limits operations, destinations, recipient set, allocation and expiry. A child commits to its exact parent token, is signed by the parent subject and may only narrow the specified sets and expiry. A portable token alone does not allocate resources: installation in the ledger must transfer its allocation out of the parent's available budget.
+
+The ABC commits to the exact root token, not just its identifier. Each admission similarly commits to the leaf token, which must match the copy installed in the ledger. This second check prevents a broader same-name child from borrowing a narrower child's accounting identity. Revocation covers every capability identifier in the submitted chain.
+
+The proposed action includes the manifest observed during discovery. The RP checks it against its configured manifest, and the resource checks it again before applying the effect. A silent schema change therefore does not inherit a stale approval. The fixture manifest is intentionally small; this result is not a general software-upgrade or dynamic-schema protocol.
+
+\subsection{Approval and reputation}
+The experimental policy requires a separate approver signature for a money threshold and for send/export operations. It covers the exact action and session, has its own expiry and cannot be replaced by two arbitrary signatures. This exercises approval-role separation. It is not a WebAuthn ceremony or evidence that a human understood a transaction.
+
+Reputation consists of signed, deduplicated observations with evidence references. Each RP independently chooses reporters and interpretation. The fixture degrades consequential operations after three unexpired events about the same principal while retaining reads. No global reputation score is imposed. A reporter can still lie within its authorized role; these events are not proof of prompt injection, intent or legal fault.
+
+\section{Revocation, Guarantees and Effects}
+\subsection{Persistent validity checks}
+Each required credential issuer supplies a signed snapshot with a sequence, issuance time, expiry and revoked identifiers. The RP records the last sequence and digest. Lower sequences, equal-sequence equivocation and removal of previously revoked identifiers are rejected. Revocation is terminal in this profile; restoration requires a new credential identity.
+
+A partition is handled through expiry, not by assuming an absent update means continued safety. This trades availability for a stated freshness requirement. It does not instantly recall already issued permits. Their exposure is bounded by their reservation and expiry under the trusted-clock assumption. Global propagation remains a deployment property to measure.
+
+The transparency fixture commits to a Merkle root and a bounded full leaf list. The RP checks inclusion and append-only prefix continuity against its local checkpoint. This is a simple $O(n)$ research mechanism, not an Internet-scale transparency service. A separate approved-kernel set is still required: logging a malicious binary does not make it acceptable. Independent witnesses needed to examine split views are not implemented.
+
+\subsection{Guarantees without invented legal authority}
+A bond object binds its principal, beneficiaries, covered operation set, currency, per-action limit, aggregate exposure, terms hash, profile and validity. Its signer is accepted through a guarantor-specific root set. The fixture uses currency \code{TEST} and explicitly fictional exposure-allocation terms. No insurance policy is sold and no actual solvency is verified.
+
+The shared ledger reserves mission resources and guarantee exposure within the same transaction. Two recipients cannot independently allocate the entire shared bond in this serialization domain. After an applied effect, the exposure remains consumed conservatively. A real claim-tail or runoff release policy is not invented. A dispute is a separate case record that does not automatically establish fault, revoke credentials, seize collateral or alter an execution receipt.
+
+An operational implementation must bind native verified mandates and provider outcomes to these objects. Attribution and evidence retention are technical goals; compensation and legal enforceability require the relevant providers and applicable arrangements. The research profile records that dependency rather than discarding the guarantee pillar.
+
+\subsection{Accounting and uncertain outcomes}
+For every capability $c$ and resource component $j$, the implementation maintains
+\begin{equation}
+ A_{c,j}=F_{c,j}+Q_{c,j}+U_{c,j}+D_{c,j},
+\end{equation}
+where $A$ is the allocation, $F$ free resources, $Q$ reserved or uncertain resources, $U$ resources consumed locally and $D$ allocations delegated to children. The three components represent test monetary units, disclosed bytes and irreversible-operation counts. They are not interchangeable units of harm. For each bond $b$,
+\begin{equation}
+ Q_b+U_b\leq A_b.
+\end{equation}
+These invariants are conditional on one honest non-cloned serialization domain.
+
+An action progresses from RESERVED to DISPATCHED and then COMMITTED, or remains UNKNOWN when a response is lost. Canceling an unemitted reservation can restore its allocation. An uncertain dispatched action cannot be refunded merely because no receipt has arrived. The resource atomically stores an effect and receipt, deduplicates repeated permits and permanently records NOT\_APPLIED when a precondition fails. This tombstone prevents a later replay from applying an effect after its budget was returned.
+
+The ledger accepts only a signed, exactly linked terminal receipt for reconciliation. An empty lookup is not such a receipt. These are concrete local guarantees; the profile does not assert universal exactly-once execution for external resources.
+
+\section{Implementation and Evaluation}
+\subsection{Implemented and external layers}
+The software uses a restricted JSON/Ed25519 envelope with an explicit signature domain and strict schemas. The native policy engine is \code{aigp-static-v1}. It is not COSE, general JSON-LD/VC, Biscuit or Cedar. Real TLS and signatures are distinguished from the registry, appraisal and guarantor fixtures. Table~\ref{tab:scope} records the distinction.
+
+\begin{table*}[t]
+\centering\caption{Full architectural scope and evidence status. Executed fixtures do not satisfy the corresponding operational provider requirement.}\label{tab:scope}
+\small\setlength{\tabcolsep}{4pt}\begin{tabular}{p{0.21\textwidth}p{0.34\textwidth}p{0.37\textwidth}}
+\toprule Function & Executed path & Remaining activation requirement\\\midrule
+Identity and RP acceptance & Separate roots, signed principal binding, opposing RP decisions & Qualified identity ecosystem and operational enrollment\\
+External enforcement and delegation & Exact token/action bindings, deterministic policy, shared resource ledger & Native Biscuit/Cedar engines, isolated non-bypassable PEP\\
+Attestation and channel & Real mutual TLS 1.3/exporter; signed software-test appraisal & Actual hardware evidence, trusted verifier, sealed workload key\\
+Revocation and transparency & Persistent sequences, terminal revocation, local append consistency & Production propagation, independent witnesses and rollback protection\\
+Reputation and consent & Signed local observations and action-bound approval-role key & Semantic evaluation and real consent ceremony\\
+Guarantees and settlement & Beneficiary/terms checks, aggregate TEST exposure, separate dispute state & Real guarantee provider, native mandates, provider settlement\\
+Agent protocol bindings & MCP stdio and A2A JSON-RPC/HTTP harness paths & Upstream SDKs, official TCKs, deployment authorization and maintenance\\\bottomrule
+\end{tabular}
+\end{table*}
+
+The gateway exposes a research transaction rather than arbitrary unguarded effects. An MCP client initializes a subprocess, lists the tool and calls it through stdio. The A2A path carries a structured data request over local HTTP. Both run the same TLS/evidence/PEP/ledger pipeline. A cross-binding test verifies that calling through different bindings does not reset the gateway's shared mission budget.
+
+The environment used Python 3.13.5, cryptography 46.0.4, pyOpenSSL 25.3.0 and Node.js 22.16.0. Native Biscuit/Cedar and protocol SDKs were unavailable after the recorded DNS failure. None of the inspected TDX, SEV-guest, SGX, TPM or NVIDIA device paths was present. Device-path absence is an environment observation, not a universal statement about available confidential-computing services.
+
+\subsection{Test corpus and correction history}
+The first 87 tests passed. A subsequent composition review added four safety tests; all four failed because an expected denial did not occur. The defects were not arithmetic or signature failures. They arose where apparently valid components were associated too loosely:
+\begin{enumerate}
+\item A root token could be substituted under the same identifier without being exactly committed in ABC.
+\item A wider child token could reuse the identity of a narrower installed child.
+\item Credential revocations were checked, but identifiers inside a capability chain were not.
+\item A higher snapshot sequence could remove an already revoked identifier.
+\end{enumerate}
+The corrections added exact token commitments, leaf-to-ledger matching, chain-wide capability revocation and monotonic revoked sets. All 91 tests then passed. Six binding tests, four mutation contracts and four JavaScript-verifier tests completed the 105-method corpus. The failed run and pre-correction source snapshots are retained.
+
+A separate campaign enumerates all 256 combinations of eight specific fixture faults: untrusted issuer, principal mismatch, self-promoted assurance, missing log membership, revoked ABC, wrong beneficiary, out-of-scope destination and absent required approval. Only the clean combination is accepted. This is exhaustive for those eight binary factors, not for arbitrary attacker inputs.
+
+\subsection{Mutation and process experiments}
+Four disposable copies remove one guard each: permitted assurance, channel binding, shared exposure or capability revocation. A direct probe must observe the prohibited effect, its safety test must fail and restoration must pass. All four controls meet those criteria. In the exposure mutation, two recipients apply 120 units under a shared bond limit of 100. The original source hashes remain unchanged.
+
+Four workers run these mutation experiments concurrently. They are actual subprocess experiments, not independent scientific committees. The implementation, tests and review were produced within the same AI-assisted research effort, creating common-mode risk.
+
+A crash test terminates its own resource process after committing an effect but before returning the receipt. The parent retains UNKNOWN and its exposure reservation. A restarted process returns the retained receipt without producing another effect. Another test presents the same permit to two resource processes and observes one effect. A separate 120-request, two-RP reservation experiment with 12 threads accepts 100 unit-of-ten requests under a mission budget of 1,000.
+
+\subsection{Public verification and measurements}
+A public trace contains 17 signed objects. A separately written Node.js verifier uses an explicitly supplied public-key file to check their signatures and selected action, token, channel and receipt links. It rejects a changed signed statement, missing trusted keys and noncanonical duplicate-key input. It is not an independently implemented full policy engine or an independently endorsed trust root.
+
+\begin{table}[t]
+\centering\caption{Executed results and bounded interpretation.}\label{tab:results}
+\small\setlength{\tabcolsep}{4pt}\begin{tabular}{p{0.54\columnwidth}p{0.37\columnwidth}}
+\toprule Experiment & Observation\\\midrule
+Ordinary test methods & 105 pass\\
+Eight-fault combinations & 256; 1 accept, 255 deny\\
+Single-guard mutation controls & 4 causal red/green results\\
+Concurrent reservations & 100 accepted of 120\\
+Concurrent resource processes & 1 effect for 2 presentations\\
+Public trace & 17 signatures checked in Node\\
+Cloned authority & 200 effects from initial 100\\\bottomrule
+\end{tabular}
+\end{table}
+
+The frozen local admission benchmark contains 130 samples after 20 warmups. Its median is 5.290 ms, nearest-rank p99 is 9.270 ms and maximum is 12.838 ms. It includes signature checks, evidence validation and local SQLite checkpoint work, but neither network propagation nor hardware appraisal. An earlier pilot's captured stdout reported p99 11.384 ms; its raw array was superseded before freezing. The final raw array is retained. These measurements support no universal sub-10-ms guarantee or superiority over native policy engines.
+
+A discrete simulation uses 1,000 domains, a fixed seed, assumed delivery delays from 0 to 45 logical seconds, revocation at time 10 and snapshot expiry at time 30. Admission stops by the earlier of receipt or expiry under its stated clock and honest-issuer assumptions. The full-partition case stops at expiry. This exercises the specified timeout rule, not real Internet propagation or a deployed gossip mechanism.
+
+\section{Counterexamples and Limits}
+The privileged-cloning experiment copies a funded ledger and uses the same signing key in both copies. Each authorizes an action of 100. The resource applies both and records 200, while each ledger separately satisfies its local invariant. Local hash chains, signature checks and an inclusion log do not prevent this duplication. Non-clonable authority or demonstrably disjoint allocation remains an operational requirement.
+
+A conventional transactional baseline also preserves a budget of 100 over 120 attempts. The research composition does not uniquely own that accounting property. Its candidate value is a common, evidence-bound interface across trust roles and agent bindings, which still requires validation by other implementers.
+
+An in-scope send action containing the false text \code{2+2=5} is accepted by the authorization rules. The system is not a truth oracle. A compromised approved PEP can lie about enforcement; a trusted verifier can issue false results; a dishonest reporter can generate misleading events. The fixture cannot establish side-channel freedom, real human intent, post-compromise confidentiality or the completeness of business-effect mediation.
+
+A local test registry is not legally qualified identity. A signed simulated bond is not insurance, and an exposure reservation is not actual payment settlement. A higher-assurance profile currently refuses these fixtures. A recorded manufacturer test vector could later validate a verifier's parser and cryptography, but would still not prove a live measured deployment. These distinctions remain requirements of the full architecture rather than excuses to remove its harder layers.
+
+\section{Program Strategy and Reproducibility}
+The engineering target is a common acceptance and enforcement profile whose participants retain local trust decisions. Its potential usefulness should be tested by replacing reference components with native ones while preserving the rejection corpus. This makes the next evidence requirements concrete: native token attenuation, schema-validated policy decisions, real evidence appraisal, qualified provider bindings, official protocol tests and independently reproduced deployments.
+
+A research release need not wait for a universal issuer or worldwide deployment. Its documentation must instead distinguish the accepted software-test profile from each unfulfilled operational gate. Publication is an archival and reuse step; it neither establishes legal novelty nor makes a system indispensable. The present study contains no customer-demand measurement, foundation acceptance or financial-provider commitment.
+
+The locally held source archive includes strict encoding, RP policy, persistent state, accounting, TLS transport, protocol harnesses, tests, mutation probes, raw results and this manuscript. Its runner regenerates evidence in a separate directory without overwriting frozen evidence. A fresh local replay on 26 September 2026 passed all five runner stages. Cold replay verifies the same-environment artifact; it is not a multi-platform or hermetic supply-chain claim.
+
+This documentation edition publishes the specification, integration contracts, security limits and manuscript under CC BY 4.0 in the AIGP supplement of the Mission Authority Conservation repository. The executable software has not been uploaded there: platform checks blocked its transfer. Its prepared Apache-2.0 package remains a separate local artifact, so readers must not infer full public reproducibility from this documentation publication. The paper compiles with pdfLaTeX. Raw requester-supplied reports, private instructions and real private keys are excluded. Existing MAC, AUEC and AOR releases are unchanged; their DOIs do not identify this AIGP edition. No new DOI or institutional endorsement is claimed.
+
+\section{Conclusion}
+The full AIGP scope can be represented as one software-test acceptance path without replacing existing transport protocols or prescribing a global issuer. This study connects separate identity and guarantee roots, session-bound appraisal, local policy, exact delegation, revocation, exposure accounting and uncertain-effect recovery. Actual TLS and local protocol paths exercise the composition. Four defects found after an initially green suite show why the connections between components require explicit tests.
+
+The delivered result is broader than a budget-control component and narrower than an operational worldwide trust infrastructure. Native engines, hardware-backed execution, qualified identities, real guarantees, clone-resistant authority and external validation remain necessary for stronger deployment claims. Keeping those gates explicit preserves the original architectural ambition without treating software fixtures as the evidence that completes it.
+
+\balance
+\section*{Acknowledgment and AI Assistance}
+The project was initiated and directed by Mohammed Messaoudene. Requester-supplied reports attributed to Grok, Claude and DeepSeek, and a separate strategic note, informed the design. ChatGPT assisted with source analysis, implementation, testing, debugging, evidence organization, manuscript drafting and typesetting. These tools are not authors, sponsors or endorsers. Review perspectives within the same assistant are not independent human or institutional review. Responsibility for any public release remains with its human author and maintainer.
+
+\begin{thebibliography}{12}
+\bibitem{rats} H. Birkholz et al., ``Remote ATtestation procedureS (RATS) Architecture,'' RFC 9334, Jan. 2023. \url{https://www.rfc-editor.org/rfc/rfc9334}.
+\bibitem{eat} L. Lundblade et al., ``The Entity Attestation Token (EAT),'' RFC 9711, Apr. 2025. \url{https://www.rfc-editor.org/rfc/rfc9711.html}.
+\bibitem{spiffe} SPIFFE Project, ``SPIFFE Concepts,'' documentation, accessed Sep. 26, 2026. \url{https://spiffe.io/docs/latest/spiffe-about/spiffe-concepts/}.
+\bibitem{biscuit} Biscuit Project, ``Biscuit Python,'' upstream binding documentation. \url{https://python.biscuitsec.org/}; package record \url{https://pypi.org/project/biscuit-python/}. Accessed Sep. 26, 2026.
+\bibitem{cedar} Cedar Project, ``Cedar Policy Language Reference Guide,'' accessed Sep. 26, 2026. \url{https://docs.cedarpolicy.com/}.
+\bibitem{tls} E. Rescorla, ``The Transport Layer Security (TLS) Protocol Version 1.3,'' RFC 8446, Aug. 2018, Sec. 7.5. \url{https://www.rfc-editor.org/rfc/rfc8446.html}.
+\bibitem{mcp-life} Model Context Protocol, ``Lifecycle,'' revision 2025-11-25. \url{https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle}.
+\bibitem{mcp-tools} Model Context Protocol, ``Tools,'' revision 2025-11-25. \url{https://modelcontextprotocol.io/specification/2025-11-25/server/tools}.
+\bibitem{a2a} A2A Project, ``Agent2Agent Protocol Specification,'' documentation snapshot accessed Sep. 26, 2026. \url{https://a2a-protocol.org/latest/specification/}.
+\bibitem{ap2} AP2 Project, ``Agent Payments Protocol'' and ``Checkout Mandate,'' accessed Sep. 26, 2026. \url{https://ap2-protocol.org/}; \url{https://ap2-protocol.org/ap2/checkout_mandate/}.
+\bibitem{vlei} GLEIF, ``vLEI Ecosystem Governance Framework,'' accessed Sep. 26, 2026. \url{https://www.gleif.org/en/organizational-identity/become-a-vlei-issuer-qvi/vlei-ecosystem-governance-framework}.
+\end{thebibliography}
+\end{document}
